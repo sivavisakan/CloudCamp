@@ -1,12 +1,13 @@
 CloudCamp::Application.routes.draw do
-  get "pages/home"
+  get "users/new"
 
-  get "pages/pittsburgh"
+  match '/signup',  :to => 'users#new'
 
-  get "pages/register"
+  match '/contact', :to => 'pages#contact'
+  match '/pittsburgh',   :to => 'pages#pittsburgh'
+  match '/register',    :to => 'pages#register'
 
-  get "pages/contact"
-
+  root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
